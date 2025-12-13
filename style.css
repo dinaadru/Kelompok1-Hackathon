@@ -1,0 +1,73 @@
+body {
+  background: #0d0f16;
+  color: white;
+  font-family: Arial;
+}
+
+/* NAVBAR */
+.navbar-custom {
+  background: #1f2330;
+  border-bottom: 1px solid #2f3342;
+}
+.logo-stroke {
+  height: 45px;
+  filter: drop-shadow(0 0 2px white);
+}
+
+/* PRODUCTS */
+.product-card {
+  background: #151721;
+  border-radius: 12px;
+  border: 1px solid #23252f;
+  transition: 0.25s;
+}
+.product-card:hover {
+  transform: translateY(-5px);
+}
+.product-card img {
+  height: 230px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.product-card .card-body p {
+  color: #f5f7ff;
+  font-size: 100%;
+  font-weight: 600;
+  text-shadow: 0 0 6px rgba(0,0,0,0.8);
+}
+
+/* background halus di belakang teks */
+.product-card .card-body {
+  background: rgba(0,0,0,0.35); 
+  padding: 12px;
+  border-radius: 0 0 12px 12px;
+}
+
+/* BUNDLE */
+.bundle-card {
+  background: #13151a;
+  padding: 20px;
+  border-radius: 16px;
+  border: 2px solid rgba(13,180,255,0.2);
+  width: 680px;
+  margin: auto;
+  box-shadow: 0 8px 30px rgba(13,180,255,0.1);
+  position: relative;
+  text-align: center;
+}
+.bundle-img {
+  width: 100%;
+  border-radius: 12px;
+}
+.bundle-badge {
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  background: #ff3860;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-weight: bold;
+  transform: rotate(-7deg);
+  color: white;
+}
