@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>OnlyFans Store</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- STYLE EKSTERNAL -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-custom px-3">
+      <img src="onlyfans-logo.png" class="logo-stroke" />
+      <button
+        class="btn btn-outline-info ms-auto position-relative"
+        data-bs-toggle="modal"
+        data-bs-target="#cartModal"
+      >
+        Cart
+        <span class="badge bg-danger" id="cartCount">0</span>
+      </button>
+    </nav>
+
+    <!-- HEADER -->
+    <div class="text-center mt-4">
+      <h1 class="text-info">The only fans you need</h1>
+      <p class="bg-info p-2 text-dark d-inline-block fw-bold">
+        Pick your fan to become a fan
+      </p>
+    </div>
+
+    <!-- PRODUCTS -->
+    <div class="container mt-4">
+      <div class="row" id="products">
+        <div class="col-md-3 mb-4 product">
+          <div class="card product-card">
+            <img
+              src="https://getholmesfans.com/images/virtuemart/product/12084-Hero.jpg"
+            />
+            <div class="card-body text-center">
+              <p>Slick, Slim, Black</p>
+              <button class="btn btn-info btn-sm buy">Buy</button>
+              <button class="btn btn-outline-light btn-sm add">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 mb-4 product">
+          <div class="card product-card">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM51nhb6nPkSSBBcnPKwctDv4TiUGkgk0xjg&s"
+            />
+            <div class="card-body text-center">
+              <p>Tall, Slim, Detachable Head</p>
+              <button class="btn btn-info btn-sm buy">Buy</button>
+              <button class="btn btn-outline-light btn-sm add">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 mb-4 product">
+          <div class="card product-card">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkM5uIKMgQSbxkFScHHp2fyRFb3rf3Kj6Y7g&s"
+            />
+            <div class="card-body text-center">
+              <p>Short, White</p>
+              <button class="btn btn-info btn-sm buy">Buy</button>
+              <button class="btn btn-outline-light btn-sm add">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 mb-4 product">
+          <div class="card product-card">
+            <img
+              src="https://shop.kuhl.in/cdn/shop/files/prima-a3-espresso-1.jpg"
+            />
+            <div class="card-body text-center">
+              <p>Wireless Enjoyment</p>
+              <button class="btn btn-info btn-sm buy">Buy</button>
+              <button class="btn btn-outline-light btn-sm add">
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BUNDLE -->
+    <div class="bundle-card mt-4 mb-4">
+      <div class="bundle-badge">15% OFF</div>
+      <img
+        class="bundle-img"
+        src="https://djd1xqjx2kdnv.cloudfront.net/photos/37/94/500897_11703_XL.jpg"
+      />
+      <h2 class="text-info fw-bold mt-3">Special Bundle Offer</h2>
+      <p class="text-light">
+        GET 15% OFF FOR THESE FANS SO YOU WON'T FEEL LONELY ANYMORE!
+      </p>
+      <button class="btn btn-info btn-lg">Get Bundle Now</button>
+    </div>
+
+    <!-- CART MODAL -->
+    <div class="modal fade" id="cartModal">
+      <div class="modal-dialog">
+        <div class="modal-content bg-dark text-light">
+          <div class="modal-header">
+            <h5>Shopping Cart</h5>
+            <button
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+
+          <div class="modal-body">
+            <ul id="cartList" class="list-group"></ul>
+            <p id="emptyText" class="text-center mt-2">Cart kosong</p>
+          </div>
+
+          <div class="modal-footer">
+            <button id="clearCart" class="btn btn-danger">Clear</button>
+            <button id="checkout" class="btn btn-info">Checkout</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BUY FORM -->
+    <div class="modal fade" id="orderModal">
+      <div class="modal-dialog">
+        <div class="modal-content bg-dark text-light">
+          <div class="modal-header">
+            <h5>Order Product</h5>
+            <button
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+
+          <div class="modal-body">
+            <form id="orderForm">
+              <input type="hidden" id="orderProduct" />
+              <input
+                id="nama"
+                class="form-control mb-2"
+                placeholder="Nama"
+                required
+              />
+              <input
+                id="hp"
+                class="form-control mb-2"
+                placeholder="Nomor HP"
+                required
+              />
+              <textarea
+                id="alamat"
+                class="form-control mb-2"
+                placeholder="Alamat"
+                required
+              ></textarea>
+              <button class="btn btn-info w-100">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHECKOUT FORM -->
+    <div class="modal fade" id="checkoutFormModal">
+      <div class="modal-dialog">
+        <div class="modal-content bg-dark text-light">
+          <div class="modal-header">
+            <h5>Checkout</h5>
+            <button
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+
+          <div class="modal-body">
+            <form id="checkoutForm">
+              <input
+                id="coNama"
+                class="form-control mb-2"
+                placeholder="Nama"
+                required
+              />
+              <input
+                id="coHp"
+                class="form-control mb-2"
+                placeholder="Nomor HP"
+                required
+              />
+              <textarea
+                id="coAlamat"
+                class="form-control mb-2"
+                placeholder="Alamat"
+                required
+              ></textarea>
+              <button class="btn btn-info w-100">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCRIPT BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- SCRIPT JAVASCRIPT PEMULA -->
+    <script>
+      /*  
+   ===== VERSION PEMULA BANGET =====
+   Tanpa advanced function, semuanya basic, mudah dipahami
+*/
+
+      // siapkan localStorage
+      if (localStorage.getItem("cart") === null)
+        localStorage.setItem("cart", "[]");
+      if (localStorage.getItem("orders") === null)
+        localStorage.setItem("orders", "[]");
+
+      // ambil data awal
+      let cart = JSON.parse(localStorage.getItem("cart"));
+      let orders = JSON.parse(localStorage.getItem("orders"));
+      let cartCount = document.getElementById("cartCount");
+      cartCount.innerText = cart.length;
+
+      // =========== ADD TO CART ===========
+      let addBtns = document.getElementsByClassName("add");
+      for (let a = 0; a < addBtns.length; a++) {
+        addBtns[a].onclick = function () {
+          let name = this.parentElement.querySelector("p").innerText;
+
+          cart.push(name);
+          localStorage.setItem("cart", JSON.stringify(cart));
+          cartCount.innerText = cart.length;
+        };
+      }
+
+      // =========== BUY BUTTON ===========
+      let buyBtns = document.getElementsByClassName("buy");
+      for (let b = 0; b < buyBtns.length; b++) {
+        buyBtns[b].onclick = function () {
+          let name = this.parentElement.querySelector("p").innerText;
+          orderProduct.value = name;
+          new bootstrap.Modal(orderModal).show();
+        };
+      }
+
+      // =========== BUY FORM SUBMIT ===========
+      orderForm.onsubmit = function (e) {
+        e.preventDefault();
+
+        let p = orderProduct.value;
+        let nm = nama.value;
+
+        orders.push({
+          product: p,
+          nama: nm,
+          hp: hp.value,
+          alamat: alamat.value,
+        });
+
+        localStorage.setItem("orders", JSON.stringify(orders));
+
+        // hapus produk dari tampilan
+        let items = document.getElementsByClassName("product");
+        for (let i = 0; i < items.length; i++) {
+          if (items[i].querySelector("p").innerText == p) {
+            items[i].remove();
+            break;
+          }
+        }
+
+        // hapus dari cart juga
+        let pos = cart.indexOf(p);
+        if (pos != -1) {
+          cart.splice(pos, 1);
+          localStorage.setItem("cart", JSON.stringify(cart));
+          cartCount.innerText = cart.length;
+        }
+
+        alert("Thank you, " + nm + " for purchasing in OnlyFans!");
+        bootstrap.Modal.getInstance(orderModal).hide();
+      };
+
+      // =========== TAMPILKAN CART ===========
+      cartModal.addEventListener("show.bs.modal", function () {
+        cartList.innerHTML = "";
+
+        if (cart.length == 0) {
+          emptyText.style.display = "block";
+        } else {
+          emptyText.style.display = "none";
+
+          for (let i = 0; i < cart.length; i++) {
+            cartList.innerHTML +=
+              '<li class="list-group-item bg-dark text-light d-flex justify-content-between">' +
+              cart[i] +
+              '<button class="btn btn-danger btn-sm remove" data-i="' +
+              i +
+              '">X</button></li>';
+          }
+        }
+
+        // tombol hapus
+        let rm = document.getElementsByClassName("remove");
+        for (let r = 0; r < rm.length; r++) {
+          rm[r].onclick = function () {
+            let idx = this.getAttribute("data-i");
+            cart.splice(idx, 1);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            cartCount.innerText = cart.length;
+            this.parentElement.remove();
+          };
+        }
+      });
+
+      // =========== CLEAR CART ===========
+      clearCart.onclick = function () {
+        cart = [];
+        localStorage.setItem("cart", "[]");
+        cartCount.innerText = 0;
+        cartList.innerHTML = "";
+        emptyText.style.display = "block";
+      };
+
+      // =========== CHECKOUT ===========
+      checkout.onclick = function () {
+        if (cart.length == 0) {
+          alert("Cart kosong!");
+          return;
+        }
+        new bootstrap.Modal(checkoutFormModal).show();
+      };
+
+      // =========== CHECKOUT SUBMIT ===========
+      checkoutForm.onsubmit = function (e) {
+        e.preventDefault();
+
+        let nm = coNama.value;
+
+        // simpan semua
+        for (let i = 0; i < cart.length; i++) {
+          orders.push({
+            product: cart[i],
+            nama: nm,
+            hp: coHp.value,
+            alamat: coAlamat.value,
+          });
+
+          let items = document.getElementsByClassName("product");
+          for (let j = 0; j < items.length; j++) {
+            if (items[j].querySelector("p").innerText == cart[i]) {
+              items[j].remove();
+              break;
+            }
+          }
+        }
+
+        localStorage.setItem("orders", JSON.stringify(orders));
+
+        cart = [];
+        localStorage.setItem("cart", "[]");
+        cartCount.innerText = 0;
+
+        bootstrap.Modal.getInstance(checkoutFormModal).hide();
+        alert(`Thank you, ${nm} for purchasing in OnlyFans!`);
+      };
+    </script>
+  </body>
+</html>
