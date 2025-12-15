@@ -9,6 +9,9 @@ body {
   background: #1f2330;
   border-bottom: 1px solid #2f3342;
 }
+.nav-link {
+  color: white;
+}
 .logo-stroke {
   height: 45px;
   filter: drop-shadow(0 0 2px white);
@@ -34,12 +37,12 @@ body {
   color: #f5f7ff;
   font-size: 100%;
   font-weight: 600;
-  text-shadow: 0 0 6px rgba(0,0,0,0.8);
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
 }
 
 /* background halus di belakang teks */
 .product-card .card-body {
-  background: rgba(0,0,0,0.35); 
+  background: rgba(0, 0, 0, 0.35);
   padding: 12px;
   border-radius: 0 0 12px 12px;
 }
@@ -49,10 +52,10 @@ body {
   background: #13151a;
   padding: 20px;
   border-radius: 16px;
-  border: 2px solid rgba(13,180,255,0.2);
+  border: 2px solid rgba(13, 180, 255, 0.2);
   width: 680px;
   margin: auto;
-  box-shadow: 0 8px 30px rgba(13,180,255,0.1);
+  box-shadow: 0 8px 30px rgba(13, 180, 255, 0.1);
   position: relative;
   text-align: center;
 }
