@@ -582,29 +582,6 @@
         alert(`Thank you, ${nm} for purchasing in OnlyFans!`);
       
       
-
-//className *starts with* nav-
-$('[class^=nav-]').click(function(e){
-   e.preventDefault();
-   var fileName = location.pathname.split("/").slice(-1);
-   var fileName = 'http://page-2.html'; //FOR DEMO ONLY
-      //alert(fileName); //should respond page2.html
-   var num = fileName.split('-')[1]; //2
-   var nav = this.className.split('-')[1]; //next
-   if (nav == 'next'){
-         num = parseInt(num)+1;
-         //window.location.href = "page-"+num+'.html';
-   }else{
-         num = parseInt(num)-1;
-         //window.location.href = "page-"+num+'.html';
-   }
-
-alert('Navigating to: [ page-' +num+ '.html ]'); //For demo purposes only
-
-});
-      
-      
-      
       };
     </script>
   </body>
