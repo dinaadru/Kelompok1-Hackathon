@@ -8,6 +8,10 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
 
     <!-- STYLE EKSTERNAL -->
     <link rel="stylesheet" href="style.css" />
@@ -36,7 +40,7 @@
         data-bs-toggle="modal"
         data-bs-target="#cartModal"
       >
-        Cart
+        <i class="bi bi-cart3"></i>
         <span class="badge bg-danger" id="cartCount">0</span>
       </button>
     </nav>
@@ -71,31 +75,41 @@
           <img src="img/7.png" class="d-block w-100" alt="..." />
         </div>
       </div>
-      <div class="text-center mt-4">
-        <h1 class="text-info">The only fans you need</h1>
-        <p class="bg-info p-2 text-dark d-inline-block fw-bold">
-          Pick your fan to become a fan
-        </p>
-      </div>
-      <button
-        class="carousel-control-prev"
-        type="button"
-        data-bs-target="#carouselExampleControlsNoTouching"
-        data-bs-slide="prev"
-      >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button
-        class="carousel-control-next"
-        type="button"
-        data-bs-target="#carouselExampleControlsNoTouching"
-        data-bs-slide="next"
-      >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
     </div>
+
+    <div class="hero">
+      <video autoplay muted loop disablePictureInPicture>
+        <source src="img/3010802-hd_1920_1080_24fps.mp4" type="video/mp4" />
+      </video>
+
+      <div class="content mid-content">
+        <h1>Rasakan Sejuk Alami</h1>
+        <p>Kipas angin hemat energi & modern</p>
+      </div>
+    </div>
+    <div class="text-center mt-4">
+      <h1 class="text-info">The only fans you need</h1>
+      <p class="p-2 d-inline-block fw-bold">Pick your fan to become a fan</p>
+    </div>
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselExampleControlsNoTouching"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselExampleControlsNoTouching"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+
     <!-- PRODUCTS -->
     <div class="container mt-4">
       <div class="row" id="products">
@@ -106,7 +120,9 @@
             />
             <div class="card-body text-center">
               <p>Slick, Slim, Black</p>
-              <button class="btn btn-info btn-sm buy">Buy</button>
+              <button class="btn btn-info btn-sm buy" href="checkout.html">
+                Buy
+              </button>
               <button class="btn btn-outline-light btn-sm add">
                 Add to Cart
               </button>
@@ -121,7 +137,9 @@
             />
             <div class="card-body text-center">
               <p>Tall, Slim, Detachable Head</p>
-              <button class="btn btn-info btn-sm buy">Buy</button>
+              <button class="btn btn-info btn-sm buy" href="checkout.html">
+                Buy
+              </button>
               <button class="btn btn-outline-light btn-sm add">
                 Add to Cart
               </button>
@@ -136,7 +154,9 @@
             />
             <div class="card-body text-center">
               <p>Short, White</p>
-              <button class="btn btn-info btn-sm buy">Buy</button>
+              <button class="btn btn-info btn-sm buy" href="checkout.html">
+                Buy
+              </button>
               <button class="btn btn-outline-light btn-sm add">
                 Add to Cart
               </button>
@@ -151,7 +171,9 @@
             />
             <div class="card-body text-center">
               <p>Wireless Enjoyment</p>
-              <button class="btn btn-info btn-sm buy">Buy</button>
+              <button class="btn btn-info btn-sm buy" href="checkout.html">
+                Buy
+              </button>
               <button class="btn btn-outline-light btn-sm add">
                 Add to Cart
               </button>
@@ -169,7 +191,9 @@
             />
             <div class="card-body text-center">
               <p>Slick, Slim, Black</p>
-              <button class="btn btn-info btn-sm buy">Buy</button>
+              <button class="btn btn-info btn-sm buy" href="checkout.html">
+                Buy
+              </button>
               <button class="btn btn-outline-light btn-sm add">
                 Add to Cart
               </button>
@@ -184,7 +208,9 @@
             />
             <div class="card-body text-center">
               <p>Tall, Slim, Detachable Head</p>
-              <button class="btn btn-info btn-sm buy">Buy</button>
+              <button class="btn btn-info btn-sm buy" href="checkout.html">
+                Buy
+              </button>
               <button class="btn btn-outline-light btn-sm add">
                 Add to Cart
               </button>
@@ -199,7 +225,9 @@
             />
             <div class="card-body text-center">
               <p>Short, White</p>
-              <button class="btn btn-info btn-sm buy">Buy</button>
+              <button class="btn btn-info btn-sm buy" href="checkout.html">
+                Buy
+              </button>
               <button class="btn btn-outline-light btn-sm add">
                 Add to Cart
               </button>
@@ -214,7 +242,9 @@
             />
             <div class="card-body text-center">
               <p>Wireless Enjoyment</p>
-              <button class="btn btn-info btn-sm buy">Buy</button>
+              <button class="btn btn-info btn-sm buy" href="checkout.html">
+                Buy
+              </button>
               <button class="btn btn-outline-light btn-sm add">
                 Add to Cart
               </button>
@@ -257,12 +287,13 @@
 
     <!--Kontak-->
 
-    <footer class="bg-dark text-white pt-5 pb-3">
+    <footer class="footer text-white pt-5 pb-3">
+      <!-- Footer Bottom -->
       <div class="container" id="contact">
         <div class="row">
           <!-- Logo / Brand -->
           <div class="col-md-4 mb-4 text-center">
-            <h3 class="text-info">OnlyFan</h3>
+            <h3 class="text-info">OnlyFans</h3>
             <p>BUY ALL GET STORE</p>
           </div>
 
@@ -305,9 +336,8 @@
             </ul>
           </div>
         </div>
-
-        <!-- Footer Bottom -->
-        <div class="text-center mt-3 border-top border-secondary pt-3">
+        <div class="text-center mt-3 border-secondary pt-3">
+          <hr />
           <small>© 2025 Kelompok1. All rights reserved.</small>
         </div>
       </div>
@@ -316,7 +346,7 @@
     <!-- CART MODAL -->
     <div class="modal fade" id="cartModal">
       <div class="modal-dialog">
-        <div class="modal-content bg-dark text-light">
+        <div class="modal-content text-light">
           <div class="modal-header">
             <h5>Shopping Cart</h5>
             <button

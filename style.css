@@ -1,13 +1,40 @@
 body {
-  background: #0d0f16;
+  /*#0d0f16; */
   color: white;
   font-family: Arial;
+  background: linear-gradient(270deg, #0d0f16, #85bbd4, #1b3134);
+  background-size: 600% 600%;
+  animation: angin 10s ease infinite;
+}
+
+@keyframes angin {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* NAVBAR */
 .navbar-custom {
-  background: #1f2330;
-  border-bottom: 1px solid #2f3342;
+  background: linear-gradient(270deg, #0d0f16, #85bbd4, #1b3134);
+  background-size: 600% 600%;
+  animation: angin 10s ease infinite;
+}
+@keyframes navbar {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 .nav-link {
   color: white;
@@ -16,12 +43,36 @@ body {
   height: 45px;
   filter: drop-shadow(0 0 2px white);
 }
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
 
+.hero video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero .content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+  top: 40%;
+}
+.carousel-item {
+}
+.mid-content {
+  background-color: transparent;
+}
 /* PRODUCTS */
 .product-card {
-  background: #151721;
+  background: transparent;
   border-radius: 12px;
-  border: 1px solid #23252f;
+  border: 1px solid transparent;
   transition: 0.25s;
 }
 .product-card:hover {
@@ -42,7 +93,7 @@ body {
 
 /* background halus di belakang teks */
 .product-card .card-body {
-  background: rgba(0, 0, 0, 0.35);
+  background: #1b2627;
   padding: 12px;
   border-radius: 0 0 12px 12px;
 }
@@ -73,4 +124,16 @@ body {
   font-weight: bold;
   transform: rotate(-7deg);
   color: white;
+}
+
+.footer {
+  background-color: #1b3134;
+}
+
+.modal-content {
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+.modal-content:hover {
+  background-color: #1b3134;
 }
