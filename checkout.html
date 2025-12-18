@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
@@ -13,11 +13,6 @@
       <div class="card summary-card">
         <div class="header">
           <h3>Checkout</h3>
-          <div class="progress-bar">
-            <span class="active"></span>
-            <span></span>
-            <span></span>
-          </div>
         </div>
         <h4>Summary</h4>
 
@@ -51,72 +46,78 @@
         >
         <button id="clearCart" class="btn btn-danger mt-2">Clear Cart</button>
       </div>
-      
     </div>
-    
+
     <script>
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-const itemList = document.querySelector(".item-list");
-const subtotalEl = document.querySelector(".details .detail-row:nth-child(1) span:last-child");
-const vatEl = document.querySelector(".details .detail-row:nth-child(2) span:last-child");
-const totalEl = document.querySelector(".details .detail-row.total span:last-child");
-const clearBtn = document.getElementById("clearCart");
+      const itemList = document.querySelector(".item-list");
+      const subtotalEl = document.querySelector(
+        ".details .detail-row:nth-child(1) span:last-child"
+      );
+      const vatEl = document.querySelector(
+        ".details .detail-row:nth-child(2) span:last-child"
+      );
+      const totalEl = document.querySelector(
+        ".details .detail-row.total span:last-child"
+      );
+      const clearBtn = document.getElementById("clearCart");
 
-// Fungsi untuk render cart
-function renderCart() {
-  let subtotal = 0;
+      // Fungsi untuk render cart
+      function renderCart() {
+        let subtotal = 0;
 
-  if(cart.length === 0){
-    itemList.innerHTML = "<p>Cart kosong</p>";
-    subtotalEl.innerText = "Rp 0";
-    vatEl.innerText = "Rp 0";
-    totalEl.innerText = "Rp 0";
-    return;
-  }
+        if (cart.length === 0) {
+          itemList.innerHTML = "<p>Cart kosong</p>";
+          subtotalEl.innerText = "Rp 0";
+          vatEl.innerText = "Rp 0";
+          totalEl.innerText = "Rp 0";
+          return;
+        }
 
-  itemList.innerHTML = cart.map((item, index) => {
-    subtotal += item.price * item.quantity;
-    return `
+        itemList.innerHTML = cart
+          .map((item, index) => {
+            subtotal += item.price * item.quantity;
+            return `
       <div class="d-flex justify-content-between align-items-center mb-2">
         <span>${item.name} x ${item.quantity}</span>
         <span>Rp ${item.price * item.quantity}</span>
         <button class="btn btn-sm btn-outline-danger delete-btn" data-index="${index}">Delete</button>
       </div>
     `;
-  }).join("");
+          })
+          .join("");
 
-  const vat = Math.round(subtotal * 0.11);
-  const total = subtotal + vat;
+        const vat = Math.round(subtotal * 0.11);
+        const total = subtotal + vat;
 
-  subtotalEl.innerText = `Rp ${subtotal}`;
-  vatEl.innerText = `Rp ${vat}`;
-  totalEl.innerText = `Rp ${total}`;
+        subtotalEl.innerText = `Rp ${subtotal}`;
+        vatEl.innerText = `Rp ${vat}`;
+        totalEl.innerText = `Rp ${total}`;
 
-  // Event listener tombol delete per item
-  const deleteBtns = document.querySelectorAll(".delete-btn");
-  deleteBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-      const index = btn.dataset.index;
-      cart.splice(index, 1); // hapus item
-      localStorage.setItem("cart", JSON.stringify(cart));
-      renderCart(); // rerender
-    });
-  });
-}
+        // Event listener tombol delete per item
+        const deleteBtns = document.querySelectorAll(".delete-btn");
+        deleteBtns.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const index = btn.dataset.index;
+            cart.splice(index, 1); // hapus item
+            localStorage.setItem("cart", JSON.stringify(cart));
+            renderCart(); // rerender
+          });
+        });
+      }
 
-// Event listener tombol Clear Cart
-clearBtn.addEventListener("click", () => {
-  if(confirm("Apakah yakin ingin menghapus semua produk di cart?")){
-    cart = [];
-    localStorage.setItem("cart", JSON.stringify(cart));
-    renderCart();
-  }
-});
+      // Event listener tombol Clear Cart
+      clearBtn.addEventListener("click", () => {
+        if (confirm("Apakah yakin ingin menghapus semua produk di cart?")) {
+          cart = [];
+          localStorage.setItem("cart", JSON.stringify(cart));
+          renderCart();
+        }
+      });
 
-// Render awal
-renderCart();
-</script>
-    
+      // Render awal
+      renderCart();
+    </script>
   </body>
 </html>

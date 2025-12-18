@@ -183,7 +183,7 @@ body {
   cursor: pointer;
   transition: background-color 0.3s;
   transition: all 0.2s ease-in-out;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .summary-card .btn-primary {
@@ -224,7 +224,7 @@ body {
   background: #fff;
   padding: 30px;
   border-radius: 40px;
-  width: 700px;
+  width: 300px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
 }
 
@@ -308,7 +308,7 @@ body {
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin-top: 15px;
 }
 
@@ -321,7 +321,7 @@ body {
 
 .btn-back {
   transition: all 0.2s ease-in-out;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .btn-back:hover {

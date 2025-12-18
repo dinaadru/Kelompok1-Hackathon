@@ -15,7 +15,8 @@ function setCart(cart) {
 function updateCartCount() {
   const badge = document.getElementById("cartCount");
   const cart = getCart();
-  if (badge) badge.innerText = cart.reduce((acc, item) => acc + item.quantity, 0);
+  if (badge)
+    badge.innerText = cart.reduce((acc, item) => acc + item.quantity, 0);
 }
 
 // Tambahkan produk ke cart
@@ -25,7 +26,13 @@ function addToCart(name, price, img) {
   if (index > -1) {
     cart[index].quantity += 1;
   } else {
-    cart.push({ id: `prod-${Date.now()}`, name, price, quantity: 1, image: img });
+    cart.push({
+      id: `prod-${Date.now()}`,
+      name,
+      price,
+      quantity: 1,
+      image: img,
+    });
   }
   setCart(cart);
   alert(`${name} added to cart!`);
@@ -33,7 +40,6 @@ function addToCart(name, price, img) {
 
 // ======= PAGE LOAD INIT =======
 document.addEventListener("DOMContentLoaded", () => {
-
   // --- BUTTONS ADD TO CART ---
   const addButtons = document.querySelectorAll(".add");
   addButtons.forEach((btn) => {
@@ -66,7 +72,9 @@ document.addEventListener("DOMContentLoaded", () => {
       else if (name.includes("Short")) price = 200000;
       else if (name.includes("Wireless")) price = 350000;
 
-      const cart = [{ id: `prod-${Date.now()}`, name, price, quantity: 1, image: img }];
+      const cart = [
+        { id: `prod-${Date.now()}`, name, price, quantity: 1, image: img },
+      ];
       setCart(cart);
 
       window.location.href = "checkout.html";
@@ -83,9 +91,10 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!cartItems) return;
 
       let subtotal = 0;
-      cartItems.innerHTML = cart.map((item, index) => {
-        subtotal += item.price * item.quantity;
-        return `
+      cartItems.innerHTML = cart
+        .map((item, index) => {
+          subtotal += item.price * item.quantity;
+          return `
           <div class="d-flex align-items-center mb-2">
             <img src="${item.image}" width="50"/>
             <span class="ms-2">${item.name} x ${item.quantity}</span>
@@ -93,10 +102,14 @@ document.addEventListener("DOMContentLoaded", () => {
             <button class="delete-btn btn btn-sm btn-outline-danger ms-2" data-index="${index}">&times;</button>
           </div>
         `;
-      }).join("");
+        })
+        .join("");
 
       if (cartTotal) {
-        cartTotal.innerText = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+        cartTotal.innerText = cart.reduce(
+          (acc, item) => acc + item.price * item.quantity,
+          0
+        );
       }
 
       // Listener Delete per produk
@@ -115,9 +128,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- CHECKOUT PAGE RENDER ---
   const itemList = document.querySelector(".item-list");
-  const subtotalEl = document.querySelector(".details .detail-row:nth-child(1) span:last-child");
-  const vatEl = document.querySelector(".details .detail-row:nth-child(2) span:last-child");
-  const totalEl = document.querySelector(".details .detail-row.total span:last-child");
+  const subtotalEl = document.querySelector(
+    ".details .detail-row:nth-child(1) span:last-child"
+  );
+  const vatEl = document.querySelector(
+    ".details .detail-row:nth-child(2) span:last-child"
+  );
+  const totalEl = document.querySelector(
+    ".details .detail-row.total span:last-child"
+  );
   const clearBtn = document.getElementById("clearCart");
 
   if (itemList && subtotalEl && vatEl && totalEl) {
@@ -132,16 +151,18 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       let subtotal = 0;
-      itemList.innerHTML = cart.map((item, index) => {
-        subtotal += item.price * item.quantity;
-        return `
+      itemList.innerHTML = cart
+        .map((item, index) => {
+          subtotal += item.price * item.quantity;
+          return `
           <div class="d-flex justify-content-between align-items-center mb-2">
             <span>${item.name} x ${item.quantity}</span>
             <span>Rp ${item.price * item.quantity}</span>
             <button class="btn btn-sm btn-outline-danger delete-btn" data-index="${index}">Delete</button>
           </div>
         `;
-      }).join("");
+        })
+        .join("");
 
       const vat = Math.round(subtotal * 0.11);
       const total = subtotal + vat;
@@ -185,7 +206,13 @@ document.addEventListener("DOMContentLoaded", () => {
   bundleButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
       const cart = [
-        { id: `prod-${Date.now()}`, name: "BUNDLE 10 FANS", price: 67000, quantity: 1, image: "img/bundle.png" }
+        {
+          id: `prod-${Date.now()}`,
+          name: "BUNDLE 10 FANS",
+          price: 67000,
+          quantity: 1,
+          image: "img/bundle.png",
+        },
       ];
       localStorage.setItem("cart", JSON.stringify(cart));
       window.location.href = "checkout.html";
