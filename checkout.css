@@ -1,0 +1,238 @@
+body {
+  font-family: arial;
+  background: linear-gradient(270deg, #0d0f16, #85bbd4, #1b3134);
+  animation: angin 10s ease infinite;
+  background-size: 600% 600%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  color: #333;
+}
+
+@keyframes angin {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.container {
+  display: flex;
+  gap: 30px;
+}
+
+.card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 40px;
+  width: 300px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.header h3 {
+  margin: 0 0 15px 0;
+  font-size: 18px;
+  color: #555;
+}
+
+.progress-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.progress-bar span {
+  flex: 1;
+  height: 4px;
+  background-color: #eee;
+  border-radius: 2px;
+}
+
+.progress-bar span.active {
+  background-color: #6a0dad; /* Primary purple color */
+}
+
+/* Summary Card Styling */
+.summary-card h4 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.item-list {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.item-list small.expiry {
+  display: block;
+  color: #999;
+  font-size: 11px;
+  margin-bottom: 15px;
+}
+
+.details {
+  margin-bottom: 30px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.detail-row.total {
+  font-weight: 700;
+  font-size: 18px;
+  margin-top: 15px;
+}
+
+/* Payment Card Styling */
+.credit-card-mockup {
+  background: linear-gradient(45deg, #4b0082, #9932cc); /* Purple gradient */
+  color: white;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+.bank-name {
+  font-weight: bold;
+}
+
+.chip {
+  width: 40px;
+  height: 30px;
+  background-color: #ffcc00;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.card-number {
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin: 0 0 15px 0;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.expiry-date {
+  font-size: 12px;
+}
+
+/* Form Styling */
+.payment-form label {
+  display: block;
+  font-size: 12px;
+  color: #777;
+  margin-bottom: 5px;
+}
+
+.payment-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+}
+
+.form-row .col {
+  flex: 1;
+}
+
+/* Button Styling */
+.btn-primary {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.summary-card .btn-primary {
+  background-color: #ff4d94; /* Pink color */
+  color: white;
+}
+
+.summary-card .btn-primary:hover {
+  background-color: #e60069;
+}
+
+.pay-btn {
+  background-color: #ff4d94; /* Pink color */
+  color: white;
+  margin-top: 20px;
+}
+
+.pay-btn:hover {
+  background-color: #e60069;
+}
+
+/*succes payment*/
+.pembayaran-diterima img {
+  max-width: 100%; /* jangan melebihi lebar container */
+  height: auto; /* proporsional */
+  display: block;
+  margin: 0 auto; /* pastikan img di tengah */
+}
+
+.header-success {
+  color: #2fa124;
+  font-weight: bold;
+}
+
+.payment-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 40px;
+  width: 700px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.btn-back {
+  background-color: #2fa124;
+  color: white;
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
