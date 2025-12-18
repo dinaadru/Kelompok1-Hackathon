@@ -164,7 +164,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     renderCheckout();
 
-    // Clear Cart
+    // Function clear Cart
     if (clearBtn) {
       clearBtn.addEventListener("click", () => {
         if (confirm("Apakah yakin ingin menghapus semua produk di cart?")) {
