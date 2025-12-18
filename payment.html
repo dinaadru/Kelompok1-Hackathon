@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -46,5 +46,14 @@
         <button class="btn-primary pay-btn">Pay Rp.</button>
       </form>
     </div>
+    <script>
+      document.querySelector(".pay-btn").addEventListener("click", (e) => {
+        e.preventDefault();
+        // Kosongkan cart
+        localStorage.removeItem("cart");
+        // Redirect ke done.html
+        window.location.href = "done.html";
+      });
+    </script>
   </body>
 </html>

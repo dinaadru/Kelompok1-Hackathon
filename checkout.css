@@ -182,6 +182,8 @@ body {
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .summary-card .btn-primary {
@@ -191,6 +193,7 @@ body {
 
 .summary-card .btn-primary:hover {
   background-color: #e60069;
+  transform: scale(1.02);
 }
 
 .pay-btn {
@@ -201,6 +204,7 @@ body {
 
 .pay-btn:hover {
   background-color: #e60069;
+  transform: scale(1.02);
 }
 
 /*succes payment*/
@@ -235,4 +239,91 @@ body {
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s;
+}
+
+/* Style daftar item */
+.item-list .d-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.item-list .d-flex span {
+  font-weight: 500;
+}
+
+/* Nama produk + qty */
+.item-list .d-flex span:first-child {
+  flex: 1; /* agar semua row sama rata */
+}
+
+/* Harga */
+.item-list .d-flex span:last-child {
+  width: 100px;
+  text-align: right;
+}
+
+/* Tombol delete */
+.delete-btn {
+  margin-left: 10px;
+  border: none;
+  background: none;
+  color: #dc3545;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.delete-btn:hover {
+  color: #a71d2a;
+  transform: scale(1.02);
+}
+
+/* Subtotal, VAT, total */
+.details .detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+}
+
+.details .detail-row.total {
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-top: 2px solid #0dcaf0;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+/* Tombol Clear Cart */
+#clearCart {
+  width: 100%;
+  padding: 12px 0;
+  border-radius: 8px;
+  border: none;
+  background-color: #dc3545; /* merah klasik */
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  margin-top: 15px;
+}
+
+#clearCart:hover {
+  background-color: #b02a37; /* merah lebih gelap */
+  transform: scale(1.02);
+}
+
+/* BACK TO HOME BTN */
+
+.btn-back {
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.btn-back:hover {
+  transform: scale(1.02);
 }
